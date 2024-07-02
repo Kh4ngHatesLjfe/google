@@ -1,3 +1,76 @@
+
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+  
+  #video-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  #video-container.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+  }
+  
+  iframe {
+    width: 80%;
+    height: 80%;
+    border: none;
+  }
+</style>
+</head>
+<body>
+  <div id="video-container">
+    <iframe id="video-iframe" src="" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        var videoContainer = document.getElementById('video-container');
+        var videoIframe = document.getElementById('video-iframe');
+        // Set the source of the iframe to the desired video URL
+        videoIframe.src = 'https://bypasscut.neocities.org/videoplayer';
+        videoContainer.classList.add('show');
+
+        // Fullscreen the video container
+        if (videoContainer.requestFullscreen) {
+          videoContainer.requestFullscreen();
+        } else if (videoContainer.mozRequestFullScreen) { /* Firefox */
+          videoContainer.mozRequestFullScreen();
+        } else if (videoContainer.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+          videoContainer.webkitRequestFullscreen();
+        } else if (videoContainer.msRequestFullscreen) { /* IE/Edge */
+          videoContainer.msRequestFullscreen();
+        }
+      }, 125); // 2.3 seconds delay
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
 <!doctype html><html lang="en-CA"><head><meta charset="UTF-8"><meta content="https://google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image"><title>‏ - Google Search</title><script nonce="ADEglJdRfYqDu4b0zYRVwg">(function(){
 document.documentElement.addEventListener("submit",function(b){var a;if(a=b.target){var c=a.getAttribute("data-submitfalse");a=c==="1"||c==="q"&&!a.elements.q.value?!0:!1}else a=!1;a&&(b.preventDefault(),b.stopPropagation())},!0);document.documentElement.addEventListener("click",function(b){var a;a:{for(a=b.target;a&&a!==document.documentElement;a=a.parentElement)if(a.tagName==="A"){a=a.getAttribute("data-nohref")==="1";break a}a=!1}a&&b.preventDefault()},!0);}).call(this);(function(){window.google=window.google||{};var a=window.performance&&window.performance.timing&&"navigationStart"in window.performance.timing,b=google.stvsc&&google.stvsc.ns,c=a?b||window.performance.timing.navigationStart:void 0,d=google.stvsc&&google.stvsc.rs,f=a?d||window.performance.timing.responseStart:void 0;window.start=Date.now();var h=window,k=window.performance;k&&(c&&f&&f>c&&f<=window.start?(window.start=f,h.wsrt=f-c):k.now&&(h.wsrt=Math.floor(window.performance.now()-(google.stvsc&&google.stvsc.pno||0))));var l=function(g){g&&g.target.setAttribute("data-iml",String(Date.now()))};document.documentElement.addEventListener("load",l,!0);google.rglh=function(){document.documentElement.removeEventListener("load",l,!0)};}).call(this);(function(){window.google.erd={jsr:1,bv:2034,de:true};})();(function(){var sdo=false;var mei=10;
 var h=this||self;var k,l=(k=h.mei)!=null?k:1,n,p=(n=h.sdo)!=null?n:!0,q=0,r,t=google.erd,v=t.jsr;google.ml=function(a,b,d,m,e){e=e===void 0?2:e;b&&(r=a&&a.message);d===void 0&&(d={});d.cad="ple_"+google.ple+".aple_"+google.aple;if(google.dl)return google.dl(a,e,d,!0),null;b=d;if(v<0){window.console&&console.error(a,b);if(v===-2)throw a;b=!1}else b=!a||!a.message||a.message==="Error loading script"||q>=l&&!m?!1:!0;if(!b)return null;q++;d=d||{};b=encodeURIComponent;var c="/gen_204?atyp=i&ei="+b(google.kEI);google.kEXPI&&(c+="&jexpid="+b(google.kEXPI));c+="&srcpg="+b(google.sn)+"&jsr="+b(t.jsr)+
